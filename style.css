@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.header {
+    background-image: url(images/headphones_hero_1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+section {
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+.nav-container {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 3.2rem;
+}
+
+.navigation ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: inline-block;
+    padding-right: 4rem;
+    font-size: 1.4rem;
+    color: #fff;
+    text-decoration: none;
+    transform: scale(1);
+
+    transition: all .5s;
+}
+
+.navigation ul li a::after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    right: 0;
+    bottom: 0;
+    left: -4rem;
+    width: 0;
+    height: 0;
+    background-color: #FF6565;
+
+    transition: all .6s;
+}
+
+.navigation ul li a:hover::after {
+    left: -4rem;
+    width: 40%;
+    height: 2px;
+}
+
+
+.navigation ul li a:hover,
+.navigation ul li a:hover {
+    color: #FF6565;
+    transform: scale(1.2);
+}
+
+.container {
+    max-width: 64rem;
+    margin: 0 auto;
+    text-align: center;
+}
+.header-content {
+    padding: 28rem 0 8rem 0;
+}
+
+.main-copy {
+    color: #fff;
+    font-weight: 700;
+}
+.main-copy h1 {
+    font-size: 3.2rem;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+.cta {
+    padding: 1.3rem 3rem;
+    border-radius: 5rem;
+    background-color: #FF6565;
+    color: #fff;
+    display: inline-block;
+    margin-top: 4rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transform: scale(1);
+
+    transition: all .4s;
+}
+
+.cta:hover,
+.cta:focus {
+    opacity: .8;
+    transform: scale(1.1);
+}
+
+.sub-copy {
+    margin-top: 6rem;
+    color: #fff;
+}
+
+
+/* ########### WHAT WE DO ############ */
+.we-do-container {
+    padding-top: 11rem;
+}
+
+.we-do-header {
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: #071629;
+}
+
+.we-do-text {
+    color: #071629;
+    margin-top: 3rem;
+    padding-bottom: 11rem;
+}
+
+.icon {
+    display: inline-block;
+}
+/* svg {
+    width: 9.5rem;
+    height: auto;
+} */
+
+.svg-styles {
+    width: 9.5rem;
+    height: 10rem;
+    fill: blue;
+}
