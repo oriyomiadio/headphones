@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
 html {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -20,6 +26,7 @@ section {
     max-width: 100rem;
     margin: 0 auto;
 }
+
 
 .nav-container {
     padding-top: 2rem;
@@ -122,15 +129,63 @@ p {
     color: #fff;
 }
 
+/* Hide the navigation menu by default for mobile devices */
+/* .navigation ul {
+    display: none;
+  } */
+  
+  /* Styles for the hamburger button */
+  .hamburger-menu {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .hamburger {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 3px;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  /* Animation for the hamburger button */
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  background-color: #fff;
+  height: 3px;
+  border-radius: 3px;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.hamburger::before {
+  top: -8px;
+  width: 20px;
+}
+
+.hamburger::after {
+  bottom: -8px;
+  width: 20px;
+}
+
 
 /* ########### WHAT WE DO ############ */
+.what-we-do {
+    padding-bottom: 11rem;
+}
 .we-do-container {
     padding-top: 11rem;
 }
 
-.we-do-header {
+h2 {
     font-size: 3.2rem;
     font-weight: 600;
+}
+.we-do-header {
     color: #071629;
 }
 
@@ -140,16 +195,266 @@ p {
     padding-bottom: 11rem;
 }
 
-.icon {
-    display: inline-block;
+.icon-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
-/* svg {
-    width: 9.5rem;
+.icon {
+    flex-basis: 25%;
+    text-align: center;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+
+    transform: scale(1);
+    transition: all 0.8s cubic-bezier(0,.78,.31,1.04);
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+.icon::before {
+    content: " ";
+    position: absolute;
+    top: 0rem;
+    bottom: 0;
+    left: 0rem;
+    right: 0;
+    z-index: -1;
+    width: 100%;
     height: auto;
-} */
+    background-color: transparent;
+    /* padding: 2rem 1rem; */
+    transition: all 0.8s cubic-bezier(0,.78,.31,1.04);
+}
+
+.icon:hover::before {
+    background-color: #FF6565;
+} 
+
+svg {
+    width: 9.5rem;
+    height: 8rem;
+}
 
 .svg-styles {
     width: 9.5rem;
     height: 10rem;
-    fill: blue;
+    fill: #FF6565;
 }
+
+.icon:hover .svg-styles {
+    fill: #ffffff;
+}
+
+
+.icon:hover .svg-styles {
+    fill: #ffffff;
+}
+
+.header-3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* #########----OUR RESULTS------########## */
+.section-bg {
+    background-image: url(images/headphones_hero_2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.our-result {
+    padding-top: 14rem;
+    color: #fff;
+}
+
+.result-header {
+    margin-bottom: 4rem;
+}
+
+.result-text {
+    line-height: 2.6rem;
+    padding-bottom: 5rem;
+}
+
+
+
+.dot-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8rem;
+}
+
+.dot {
+    background-image: url(images/pentagone.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    width: 19rem;
+    height: 19rem;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+
+    flex-direction: column;
+}
+
+.dot .percent {
+    font-size: 4.6rem;
+    font-weight: 700;
+}
+
+.dot .text {
+    font-size: 1.4rem;
+}
+
+
+/* #########----CONTACT US------########## */
+input {
+    all: unset
+}
+.contact-us {
+    padding: 11rem 0;
+}
+
+.contact-container {
+    margin: 0 auto;
+    max-width: 34rem;
+}
+
+.contact-us-header {
+    text-align: center;
+    margin-bottom: 5.6rem;
+}
+
+.form .form-input:not(:last-child) {
+    margin-bottom: 4.6rem;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    color: #071629;
+}
+.custom-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.custom-input {
+    width: 34rem;
+    height: 1rem;
+    outline: none;
+    border-bottom: 1px solid #a9abae;
+
+    transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.custom-input:focus {
+    height: 2rem;
+    border-bottom: 2px solid #071629;
+}
+
+
+/* #########----FOOTER------########## */
+footer {
+    background-color: #071629;
+}
+
+.foo-con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socials {
+    display: flex;
+    width: 10rem;
+    gap: 1.4rem;
+}
+
+path {
+    transition: all .3s;
+}
+
+#facebook path:hover {
+    fill: #FF6565;
+}
+#instagram path:hover {
+    fill: #FF6565;
+}
+#twitter path:hover {
+    fill: #FF6565;
+}
+
+.copyright {
+    text-align: center;
+    color: #ffffff87;
+}
+
+
+
+/* #########----MEDIA QUERIES------########## */
+/* ----Tablet----- */
+@media screen and (max-width: 768px) {
+
+    .nav-container, .foo-con {
+        margin: 0 3rem
+    }
+
+    /* ##What We Do */
+    .icon-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .icon {
+        flex-basis: 50%;
+        padding: 7rem;
+    }
+    
+    .dot-container {
+        flex-wrap: wrap;
+    }
+
+    .dot {
+        flex-basis: 50%;
+        padding: 3rem;
+        margin-bottom: 11rem;
+    }
+}
+
+
+
+/* Media query for mobile */
+@media screen and (max-width: 480px) {
+    section {
+        padding: 0 2rem;
+    }
+
+    .icon {
+        flex-basis: 100%;
+        padding: 2rem;
+    }
+
+    .icon p {
+        margin: 0 auto;
+        text-align: center;
+        width: 20rem;
+    }
+
+    .dot {
+        flex-basis: 100%;
+    }
+
+    .navigation ul {
+        display: none;
+      }
+    
+      .hamburger-menu {
+        display: block;
+      }
+  }
